@@ -4,9 +4,12 @@ buildscript {
     ext.kotlin_version = "1.9.0"
 
     repositories {
-        mavenCentral()
-        mavenLocal()
+//        mavenCentral()
+//        mavenLocal()
         google()
+        maven { url 'https://maven.aliyun.com/repository/google'; }
+        maven { url 'https://maven.aliyun.com/repository/central'; }
+        maven { url 'https://maven.aliyun.com/repository/public'; }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.1'
@@ -19,12 +22,28 @@ buildscript {
 
 allprojects {
     repositories {
-        mavenCentral()
-        mavenLocal()
+//        mavenCentral()
+//        mavenLocal()
         google()
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+//        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google'; }
+        maven { url 'https://maven.aliyun.com/repository/central'; }
+        maven { url 'https://maven.aliyun.com/repository/public'; }
     }
 }
 
+//
+//allprojects {
+//    repositories {
+//        google()
+//        jcenter()
+//        maven { url 'https://maven.aliyun.com/repository/google' }
+//        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+//        maven { url 'https://maven.aliyun.com/repository/public' }
+//    }
+//}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
